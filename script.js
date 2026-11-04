@@ -1265,19 +1265,27 @@ quoteInput.addEventListener("input", () => {
    TO-DO LIST
 =========================================== */
 
+
+/* ===========================================
+   TO-DO LIST
+=========================================== */
+
 function renderTodos() {
   const container = document.getElementById("todo-items");
 
   container.replaceChildren();
 
   todos.forEach((todo, index) => {
-    const row = document.createElement("label");
-    row.className = "todo-row" +
-      (todo.done ? " done" : "");
+    const row = document.createElement("div");
+    row.className = "todo-row" + (todo.done ? " done" : "");
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = Boolean(todo.done);
+    checkbox.setAttribute(
+      "aria-label",
+      "Complete task: " + todo.text
+    );
 
     checkbox.addEventListener("change", () => {
       todos[index].done = checkbox.checked;
@@ -1288,10 +1296,51 @@ function renderTodos() {
     const text = document.createElement("span");
     text.textContent = todo.text;
 
-    row.append(checkbox, text);
+    text.addEventListener("click", () => {
+      todos[index].done = !todos[index].done;
+      save("todos", todos);
+      renderTodos();
+    });
+
+    // Create the delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "todo-delete";
+    deleteButton.textContent = "×";
+    deleteButton.setAttribute(
+      "aria-label",
+      "Remove task: " + todo.text
+    );
+
+    // Remove the selected task and save the changes
+    deleteButton.addEventListener("click", () => {
+      todos.splice(index, 1);
+      save("todos", todos);
+      renderTodos();
+    });
+
+    row.append(checkbox, text, deleteButton);
     container.appendChild(row);
   });
 }
+
+// Add new to-do tasks
+document.getElementById("add-todo")
+  .addEventListener("click", () => {
+    const text = prompt("Add a task to your to-do list:");
+
+    if (!text || !text.trim()) {
+      return;
+    }
+
+    todos.push({
+      text: text.trim().slice(0, 120),
+      done: false
+    });
+
+    save("todos", todos);
+    renderTodos();
+  });
 
 document.getElementById("add-todo")
   .addEventListener("click", () => {

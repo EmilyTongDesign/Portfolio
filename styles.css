@@ -2119,3 +2119,25 @@ body.dark .project-grid .grid-art {
     display: none;
   }
 }
+
+/* To-do list delete button */
+.todo-delete {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #a88b91;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.todo-delete:hover {
+  color: #d65f7e;
+  transform: scale(1.2);
+}
+
+.todo-delete:focus-visible {
+  outline: 2px solid #d65f7e;
+  border-radius: 4px;
+}
