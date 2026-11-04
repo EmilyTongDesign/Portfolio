@@ -1,0 +1,2121 @@
+
+/* =========================================
+   DESIGN VARIABLES
+========================================= */
+
+:root {
+  --ivory: #f8f5ef;
+  --paper: #fffdf8;
+  --ink: #292929;
+  --muted: #746962;
+  --border: #e6ded4;
+  --pink: #e8b7c5;
+  --cork: #b8895f;
+  --frame: #986d49;
+  --image-bg: #eeebe6;
+
+  --serif: "Bodoni Moda", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --hand: "Caveat", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--sans);
+  transition: background .25s, color .25s;
+}
+
+body.dark {
+  --ivory: #201e27;
+  --paper: #302c38;
+  --ink: #f6e9e7;
+  --muted: #c9bdbd;
+  --border: #514751;
+  --cork: #66503e;
+  --frame: #493428;
+  --image-bg: #3b3740;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+em {
+  font-weight: 400;
+}
+
+.handwritten {
+  font-family: var(--hand);
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid #d48eaa;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+  min-height: 68px;
+  padding: 10px clamp(16px, 3vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 40;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.nav-links,
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 30px);
+}
+
+.nav-links a {
+  font-size: 13px;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: #b77790;
+}
+
+.nav-actions {
+  gap: 8px;
+}
+
+.nav-button {
+  background: var(--ivory);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 9px 12px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  border-color: #b87b91;
+}
+
+.hamburger-button {
+  display: none;
+}
+
+/* =========================================
+   MAIN PAGE STRUCTURE
+========================================= */
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.eyebrow {
+  color: #b57c91;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.content-page {
+  width: min(1380px, 100%);
+  min-height: calc(100dvh - 125px);
+  margin: 0 auto;
+  padding: 70px clamp(22px, 4vw, 55px) 95px;
+}
+
+.content-page h2,
+.simple-home h2 {
+  font-size: clamp(40px, 5.5vw, 76px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.section-lead {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 760px;
+}
+
+/* =========================================
+   HOMEPAGE LAYOUT
+========================================= */
+
+.home-layout,
+.home-layout.simple-active {
+  display: grid;
+  grid-template-columns: minmax(215px, 22%) minmax(0, 1fr);
+  gap: 12px;
+  height: calc(100dvh - 125px);
+  min-height: 650px;
+  padding: 12px;
+}
+
+/* =========================================
+   PERSONAL SIDEBAR
+========================================= */
+
+.profile {
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  padding: clamp(16px, 2vw, 27px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper);
+  text-align: left;
+}
+
+.profile h1 {
+  font-size: clamp(32px, 3vw, 47px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 14px 0 8px;
+}
+
+.profile h1 em {
+  color: #b87991;
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bio {
+  margin: 21px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.profile-rule {
+  border-top: 1px solid var(--border);
+  margin: 15px 0 22px;
+}
+
+.profile-fact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.fact-icon {
+  flex: 0 0 20px;
+  width: 20px;
+  text-align: left;
+  color: #b57d91;
+  font-size: 19px;
+}
+
+.profile-fact > div {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.profile-fact small {
+  display: block;
+  color: #b57d91;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.profile-fact p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.sidebar-note {
+  margin: 24px 0 12px;
+  color: #b67a8d;
+  font-size: 25px;
+}
+
+.sidebar-link {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  font-size: 11px;
+}
+
+/* =========================================
+   WORKSPACE AND CORKBOARD
+========================================= */
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+
+.workspace-heading {
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.workspace-heading .handwritten {
+  font-size: 19px;
+}
+
+.corkboard {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  isolation: isolate;
+  overflow: hidden;
+
+  border: 10px solid var(--frame);
+  border-radius: 5px;
+
+  background-color: var(--cork);
+  background-image:
+    repeating-linear-gradient(
+      35deg,
+      transparent 0 3px,
+      #ffffff0b 4px 5px
+    ),
+    repeating-linear-gradient(
+      110deg,
+      transparent 0 5px,
+      #3e210e12 6px 7px
+    ),
+    radial-gradient(
+      circle at 40% 30%,
+      #ffffff18,
+      transparent 75%
+    );
+
+  box-shadow:
+    inset 0 0 30px #0002,
+    0 6px 22px #0002;
+}
+
+body.dark .corkboard {
+  box-shadow:
+    inset 0 0 75px #100b15ac,
+    0 8px 32px #0007;
+}
+
+#board-projects,
+#placed-stickers,
+#custom-notes {
+  display: contents;
+}
+
+/* =========================================
+   FAIRY LIGHTS
+========================================= */
+
+.fairy-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 20;
+
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+}
+
+.fairy-lights::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  border-bottom: 2px solid #594c40;
+  border-radius: 50%;
+}
+
+.light-bulb {
+  position: relative;
+  top: 19px;
+  width: 10px;
+  height: 15px;
+  border-radius: 50% 50% 45% 45%;
+  background: #96847b;
+  opacity: .55;
+}
+
+body.dark .light-bulb {
+  background: #ffe4a0;
+  opacity: 1;
+  box-shadow:
+    0 0 8px #ffe2a1,
+    0 0 23px #ffd17a,
+    0 0 39px #ffdb8f80;
+}
+
+body.dark .light-bulb:nth-child(even) {
+  background: #efb6d1;
+  box-shadow:
+    0 0 12px #efb6d1,
+    0 0 30px #efb6d180;
+}
+
+/* =========================================
+   MOVABLE BOARD OBJECTS
+========================================= */
+
+.board-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--rotation, 0deg));
+
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  z-index: 5;
+
+  box-shadow: 3px 7px 16px #321f1545;
+}
+
+.board-item.dragging {
+  z-index: 100 !important;
+  cursor: grabbing;
+  box-shadow: 8px 15px 28px #321f1580;
+}
+
+.board-item a,
+.board-item button,
+.board-item textarea,
+.board-item input {
+  touch-action: manipulation;
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+
+.pushpin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: #ac5269;
+  font-size: 19px;
+  text-shadow: 1px 2px 2px #0005;
+  pointer-events: none;
+}
+
+/* =========================================
+   PROJECT POLAROIDS
+   SMALLER CARDS AND SHORTER BOARD TITLES
+========================================= */
+
+.board-project {
+  width: clamp(115px, 12vw, 177px);
+  padding: 8px 8px 12px;
+  background: #fffdf8;
+  color: #292929;
+}
+
+.project-art,
+.grid-art {
+  background: #eeebe6;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.board-project .project-art {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 4px;
+  font-size: 40px;
+}
+
+.project-art img,
+.grid-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.board-project h3 {
+  margin: 8px 0 5px;
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
+.board-project p {
+  margin: 0 0 7px;
+  color: #786b63;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.board-project a {
+  display: inline-block;
+  border-bottom: 1px solid #b97e92;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.board-project a:hover {
+  color: #ac5679;
+}
+
+/* =========================================
+   QUOTE NOTE
+========================================= */
+
+.quote-note {
+  width: 155px;
+  padding: 20px 12px 12px;
+  background: #f5dbe3;
+  color: #503843;
+}
+
+.quote-note label {
+  display: block;
+  text-align: center;
+  font-family: var(--hand);
+  font-size: 22px;
+}
+
+.quote-note textarea {
+  width: 100%;
+  min-height: 82px;
+  display: block;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  resize: vertical;
+  text-align: center;
+  font-family: var(--hand);
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.quote-note small {
+  display: block;
+  text-align: right;
+  font-size: 9px;
+}
+
+/* =========================================
+   TO-DO NOTE
+   TAPE IS OUTSIDE THE CARD BUT NOT CLIPPED
+========================================= */
+
+.todo-note {
+  width: 170px;
+  padding: 32px 12px 13px;
+  background: #fff0b2;
+  color: #52472f;
+
+  /* Essential: do not clip the decorative tape */
+  overflow: visible;
+}
+
+.todo-tape {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  z-index: 4;
+
+  width: 76px;
+  height: 21px;
+
+  transform: translateX(-50%) rotate(-8deg);
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #e8b9c7 0 7px,
+      #f7e3e8 7px 14px
+    );
+
+  opacity: .94;
+  pointer-events: none;
+}
+
+.todo-pencil {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: var(--hand);
+  font-size: 22px;
+  line-height: 1;
+  color: #8b635d;
+  pointer-events: none;
+}
+
+.todo-note h3 {
+  margin: 0 0 10px;
+  font-family: var(--hand);
+  font-size: 23px;
+}
+
+.todo-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.todo-row input {
+  margin: 2px 0 0;
+  accent-color: #b67e8e;
+}
+
+.todo-row.done span {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+.note-action {
+  border: 0;
+  padding: 5px 0;
+  background: transparent;
+  color: #9a6479;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================
+   DECORATIVE OBJECTS
+========================================= */
+
+.decoration {
+  padding: 8px;
+  text-align: center;
+}
+
+.pastry {
+  min-width: 90px;
+  background: #ffe3d5;
+  color: #8d6271;
+}
+
+.pastry > span {
+  display: block;
+  font-size: 29px;
+}
+
+.pastry small {
+  font-size: 19px;
+}
+
+.blossom {
+  color: #f7cddd;
+  font-size: 55px;
+  box-shadow: none;
+}
+
+/* =========================================
+   VISITOR POST-IT NOTES
+========================================= */
+
+.user-note {
+  width: 165px;
+  padding: 22px 12px 10px;
+  background: #e0ebd6;
+  color: #3e5849;
+}
+
+.user-note textarea {
+  width: 100%;
+  min-height: 75px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  resize: vertical;
+  font-family: var(--hand);
+  font-size: 22px;
+}
+
+/* =========================================
+   STICKERS
+========================================= */
+
+.placed-sticker {
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  box-shadow: none !important;
+  font-size: 39px;
+  line-height: 1;
+  text-shadow: 1px 2px 3px #0003;
+}
+
+.placed-sticker > span {
+  pointer-events: none;
+}
+
+/* =========================================
+   BOARD TOOLBAR & TRASH
+========================================= */
+
+.board-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 9px;
+}
+
+.board-toolbar button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.board-toolbar button:hover {
+  border-color: #b97e92;
+}
+
+.trash-button.drop-ready {
+  background: #f5c3d0;
+  color: #763748;
+  border-color: #b45a74;
+  transform: scale(1.04);
+}
+
+.trash-button.trash-active {
+  background: #a94f6c;
+  color: white;
+  border-color: #a94f6c;
+}
+
+.corkboard.trash-mode .placed-sticker,
+.corkboard.trash-mode .user-note {
+  outline: 2px dashed #fff0f4;
+  outline-offset: 5px;
+  cursor: pointer;
+}
+
+/* =========================================
+   STICKER BANK
+========================================= */
+
+.sticker-panel {
+  position: absolute;
+  right: 5px;
+  bottom: 49px;
+  z-index: 200;
+
+  width: min(320px, 96%);
+  max-height: min(470px, 75dvh);
+  padding: 17px;
+  overflow-y: auto;
+
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 35px #0005;
+  text-align: left;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-heading strong {
+  font-size: 29px;
+}
+
+.panel-heading p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.panel-heading > button {
+  align-self: flex-start;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 25px;
+}
+
+.sticker-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 8px 0 13px;
+}
+
+.sticker-source {
+  min-height: 55px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--ivory);
+  font-size: 27px;
+
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sticker-source.selected,
+.sticker-source:hover {
+  background: #f6d9e2;
+  outline: 2px solid #b87b91;
+}
+
+.panel-tip {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.text-button {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #bb7b90;
+  font-size: 11px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* =========================================
+   WASHI TAPE
+========================================= */
+
+.washi-preview {
+  display: block;
+  width: 45px;
+  height: 18px;
+  margin: auto;
+  border: 1px solid #ffffff70;
+  transform: rotate(-12deg);
+  opacity: .95;
+}
+
+.washi-preview.washi-pink,
+.placed-washi.washi-pink,
+#sticker-ghost.washi-pink {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #e8b6c6 0 9px,
+      #f5dfe7 9px 18px
+    );
+}
+
+.washi-preview.washi-sage,
+.placed-washi.washi-sage,
+#sticker-ghost.washi-sage {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #a7bba7 0 9px,
+      #deead7 9px 18px
+    );
+}
+
+.placed-washi {
+  display: block;
+  width: 90px;
+  height: 25px;
+  border: 1px solid #ffffff66;
+  box-shadow: 1px 3px 5px #00000020;
+  opacity: .95;
+}
+
+/* =========================================
+   DRAG PREVIEW - INCLUDING REAL WASHI TAPE
+========================================= */
+
+#sticker-ghost {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  background: transparent;
+  border: 0;
+  font-size: 40px;
+  line-height: 1;
+
+  filter: drop-shadow(2px 3px 3px #0004);
+}
+
+/*
+   Important: the drag preview itself gets the washi
+   background and dimensions, so it visibly follows
+   the cursor, finger, or Apple Pencil.
+*/
+#sticker-ghost.washi-ghost {
+  display: block;
+  width: 100px;
+  height: 27px;
+  border: 1px solid #ffffff88;
+  border-radius: 1px;
+  font-size: 0;
+  opacity: .98;
+
+  box-shadow: 2px 4px 9px #0003;
+  transform: translate(-50%, -50%) rotate(-8deg);
+}
+
+/* DROP TARGET */
+
+#board-drop-hint {
+  position: absolute;
+  inset: 10px;
+  z-index: 150;
+  display: none;
+  place-items: center;
+
+  border: 3px dashed #fff9;
+  background: #ffffff15;
+  color: white;
+
+  font-family: var(--hand);
+  font-size: 30px;
+  pointer-events: none;
+}
+
+.corkboard.accepting-drop #board-drop-hint {
+  display: grid;
+}
+
+/* =========================================
+   SIMPLE VIEW AND PROJECT GRID
+========================================= */
+
+.simple-home {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 25px clamp(16px, 3vw, 45px);
+}
+
+.simple-home h2 {
+  margin: 8px 0 15px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0 35px;
+}
+
+.filter {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+
+.grid-card {
+  display: block;
+  min-width: 0;
+}
+
+.grid-art {
+  width: 100%;
+  aspect-ratio: 5 / 3.5;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 65px;
+  transition: transform .2s;
+}
+
+.grid-card:hover .grid-art {
+  transform: translateY(-4px);
+}
+
+.grid-card h3 {
+  margin: 0 0 7px;
+  font-size: clamp(22px, 2.7vw, 32px);
+}
+
+.grid-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   INDIVIDUAL PROJECT CASE STUDIES
+========================================= */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 35px;
+  font-size: 12px;
+}
+
+.detail-intro {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.detail-summary {
+  width: 100%;
+  max-width: 1050px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.detail-meta small {
+  color: #b67c91;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.detail-meta p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* CONSISTENT HERO BACKGROUND */
+
+.detail-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 370px;
+  max-height: 620px;
+  padding: 18px;
+  overflow: hidden;
+  background: var(--image-bg);
+  border-radius: 5px;
+  font-size: 80px;
+}
+
+.detail-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 570px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================
+   FULL-WIDTH CASE STUDY TEXT
+========================================= */
+
+.case-study {
+  margin-top: 70px;
+  border-top: 1px solid var(--border);
+}
+
+.case-section {
+  display: block;
+  width: 100%;
+  padding: 36px 0 45px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Section number and heading appear on one row */
+.case-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  margin-bottom: 23px;
+}
+
+.case-section-heading span {
+  color: #b77c91;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.case-section-heading h3 {
+  font-size: clamp(29px, 3vw, 38px);
+  margin: 0;
+}
+
+/*
+   Paragraphs occupy the content width below the heading,
+   rather than being squeezed into a narrow right or
+   left column.
+*/
+.case-prose {
+  width: 100%;
+  max-width: 1160px;
+}
+
+.case-prose p {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 19px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.case-prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   PROJECT MEDIA GALLERY
+========================================= */
+
+.media-section {
+  margin-top: 80px;
+}
+
+.media-section > h3 {
+  margin: 10px 0 28px;
+  font-size: clamp(32px, 4vw, 49px);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 22px;
+}
+
+.media-item {
+  margin: 0;
+  min-width: 0;
+}
+
+.media-item img,
+.media-item video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--image-bg);
+  border-radius: 4px;
+}
+
+.media-item figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.next-project {
+  padding: 45px 0 0;
+  text-align: right;
+  font-family: var(--serif);
+  font-size: 27px;
+}
+
+/* =========================================
+   ABOUT PAGE - HEADSHOT ONLY
+========================================= */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: start;
+  gap: 65px;
+}
+
+.about-layout > div:first-child > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 13px 23px;
+  margin-top: 20px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 12px;
+}
+
+.about-headshot {
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding: 12px 12px 17px;
+  background: #fffaf5;
+  color: #936679;
+  transform: rotate(2deg);
+  box-shadow: 0 9px 24px #0002;
+  text-align: center;
+}
+
+.about-headshot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.about-headshot figcaption {
+  margin-top: 13px;
+  font-size: 29px;
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-page {
+  text-align: center;
+}
+
+.contact-page > .section-lead {
+  margin: 0 auto;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: min(540px, 100%);
+  margin: 45px auto 0;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 17px 19px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper);
+  text-align: left;
+}
+
+.contact-info {
+  min-width: 0;
+}
+
+.contact-info small {
+  display: block;
+  margin-bottom: 7px;
+  color: #b77a90;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.contact-info a {
+  display: inline-block;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.contact-info a:hover {
+  color: #b6758f;
+}
+
+.copy-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+.copy-button:hover,
+.copy-button.copied {
+  border-color: #c68da2;
+  background: #f4dce3;
+  color: #77415a;
+}
+
+.copy-button svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-status {
+  min-height: 20px;
+  margin-top: 17px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-flower {
+  margin-top: 35px;
+  color: #dca3b9;
+  font-size: 100px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  min-height: 57px;
+  padding: 14px clamp(18px, 4vw, 60px);
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer-message {
+  color: #b47e91;
+  font-family: var(--hand);
+  font-size: 22px;
+}
+
+/* =========================================
+   SMALLER DESKTOPS AND IPADS
+========================================= */
+
+@media (max-width: 1180px) {
+  .navbar {
+    gap: 12px;
+  }
+
+  .wordmark {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .home-layout,
+  .home-layout.simple-active {
+    grid-template-columns: minmax(195px, 26%) minmax(0, 1fr);
+  }
+
+  .board-project {
+    width: clamp(105px, 12vw, 145px);
+  }
+
+  .board-project h3 {
+    font-size: 18px;
+  }
+
+  .quote-note {
+    width: 130px;
+  }
+
+  .todo-note {
+    width: 140px;
+  }
+
+  .todo-note h3 {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .home-layout,
+  .home-layout.simple-active {
+    min-height: 690px;
+  }
+
+  .profile {
+    padding: 13px;
+  }
+
+  .profile h1 {
+    font-size: 31px;
+  }
+
+  .profile .bio {
+    font-size: 11px;
+  }
+
+  .board-project {
+    width: 108px;
+  }
+
+  .board-project h3 {
+    font-size: 17px;
+  }
+
+  .quote-note {
+    width: 123px;
+  }
+
+  .todo-note {
+    width: 130px;
+  }
+
+  .quote-note textarea {
+    font-size: 17px;
+  }
+}
+
+/* =========================================
+   MOBILE AND HAMBURGER MENU
+========================================= */
+
+@media (max-width: 767px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 12px 15px;
+  }
+
+  .wordmark {
+    font-size: 20px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .nav-button {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--ivory);
+    color: var(--ink);
+  }
+
+  .hamburger-button span {
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform .2s, opacity .2s;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .navbar .nav-links.open {
+    display: flex;
+  }
+
+  .navbar .nav-links a {
+    padding: 13px 7px;
+    font-size: 14px;
+  }
+
+  .hamburger-button.open span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger-button.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-button.open span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .home-layout,
+  .home-layout.simple-active {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    padding: 10px;
+  }
+
+  .profile {
+    height: auto;
+    overflow: visible;
+    padding: 17px;
+  }
+
+  .profile h1 {
+    margin-top: 8px;
+    font-size: 35px;
+  }
+
+  .profile .bio {
+    margin: 14px 0;
+  }
+
+  .profile-rule {
+    margin: 10px 0;
+  }
+
+  .profile-fact {
+    width: 100%;
+    margin-bottom: 13px;
+  }
+
+  .sidebar-note {
+    margin: 10px 0;
+  }
+
+  /* Taller board to give five projects room */
+  .workspace {
+    height: 1250px;
+  }
+
+  .workspace-heading {
+    font-size: 10px;
+  }
+
+  .workspace-heading .handwritten {
+    font-size: 16px;
+  }
+
+  .corkboard {
+    border-width: 7px;
+  }
+
+  .board-project {
+    width: clamp(112px, 33vw, 150px);
+    padding: 7px;
+  }
+
+  .board-project h3 {
+    font-size: 18px;
+  }
+
+  .board-project p {
+    font-size: 8px;
+  }
+
+  .quote-note {
+    width: 125px;
+    padding: 18px 8px 8px;
+  }
+
+  .quote-note label {
+    font-size: 19px;
+  }
+
+  .quote-note textarea {
+    font-size: 17px;
+  }
+
+  .todo-note {
+    width: 133px;
+  }
+
+  .todo-note h3 {
+    font-size: 19px;
+  }
+
+  .todo-row {
+    font-size: 9px;
+  }
+
+  .pastry > span {
+    font-size: 25px;
+  }
+
+  .blossom {
+    font-size: 44px;
+  }
+
+  .board-toolbar {
+    justify-content: center;
+  }
+
+  .board-toolbar button {
+    min-height: 44px;
+    padding: 9px 11px;
+    font-size: 10px;
+  }
+
+  .simple-home {
+    overflow: visible;
+    padding: 20px 5px;
+  }
+
+  .content-page {
+    padding: 55px 20px 80px;
+  }
+
+  .detail-meta,
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .detail-image {
+    min-height: 250px;
+    padding: 10px;
+  }
+
+  /* Case-study text stays full width on mobile */
+  .case-section {
+    padding: 28px 0 36px;
+  }
+
+  .case-section-heading {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .case-prose p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .footer-message {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace {
+    height: 1290px;
+  }
+
+  .wordmark {
+    font-size: 17px;
+  }
+
+  .nav-button {
+    font-size: 0;
+  }
+
+  .nav-button > span:first-child {
+    font-size: 17px;
+  }
+
+  .contact-row {
+    padding: 12px;
+  }
+
+  .contact-info a {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* =========================================
+   NAVIGATION STABILITY
+========================================= */
+
+/* Prevent horizontal shifts caused by scrollbars */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/*
+   Keep the view button's space reserved when
+   hidden, so the other navigation elements
+   do not shift position.
+*/
+
+#mode-toggle {
+  visibility: visible;
+}
+
+.navbar:not(.on-home) #mode-toggle {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Prevent navigation items from shrinking */
+.navbar .wordmark,
+.navbar .nav-links,
+.navbar .nav-actions {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   MOBILE AND IPAD
+========================================= */
+
+@media (max-width: 767px) {
+
+  /*
+     Keep the same navigation grid whether
+     the view button is shown or hidden.
+  */
+
+  .navbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  /*
+     Visibility hidden preserves the button's
+     width on mobile too, preventing the
+     hamburger menu from moving.
+  */
+
+  .navbar:not(.on-home) #mode-toggle {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+
+/* =========================================
+   FIX NAVIGATION SHIFTING
+========================================= */
+
+/* Keep the toggle the same width in both modes */
+#mode-toggle {
+  width: 145px;
+  min-width: 145px;
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+/* Keep navigation links in place */
+.navbar .nav-links {
+  flex-shrink: 0;
+}
+
+/* Prevent other buttons from resizing */
+.navbar .nav-actions {
+  flex-shrink: 0;
+}
+
+/* Tablet sizing */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #mode-toggle {
+    width: 145px;
+    min-width: 145px;
+  }
+}
+
+/* Mobile sizing */
+@media (max-width: 767px) {
+  #mode-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  /* Only display the icon on smaller phones */
+  #mode-label {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   CONSISTENT PROJECT PHOTO FRAMES
+========================================= */
+
+/* PROJECT DOCUMENTATION GALLERY */
+
+/* Each photo gets the same outer frame */
+.media-item {
+  margin: 0;
+  min-width: 0;
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* All images have exactly the same display area */
+.media-item img,
+.media-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+
+  background: var(--image-bg);
+  border: none;
+  border-radius: 0;
+}
+
+/* Consistent caption spacing */
+.media-item figcaption {
+  margin-top: 12px;
+  padding: 0 2px 2px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* PROJECTS PAGE AND SIMPLE VIEW */
+
+.grid-art {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.grid-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+}
+
+/* CORKBOARD POLAROIDS */
+
+.board-project {
+  background: #fffdf8;
+  padding: 9px 9px 14px;
+}
+
+.board-project .project-art {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  background: #eeebe6;
+  border: none;
+  overflow: hidden;
+}
+
+.board-project .project-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* MAIN PROJECT HERO IMAGE */
+
+.detail-image {
+  width: 100%;
+  min-height: 350px;
+  padding: 20px;
+  background: var(--image-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.detail-image img {
+  display: block;
+  width: 100%;
+  max-height: 570px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+}
+
+
+/* =========================================
+   CONSISTENT PROJECT THUMBNAIL FRAMES
+========================================= */
+
+/* Make every thumbnail the exact same size */
+.project-grid .grid-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+  margin-bottom: 14px;
+
+  background: #eeebe6;
+  border: 2px solid #ded8d0;
+  border-radius: 4px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Fit each image within the frame without cropping */
+.project-grid .grid-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  border: none;
+  border-radius: 0;
+}
+
+/* Keep the outer border visible on hover */
+.project-grid .grid-card:hover .grid-art {
+  border-color: #b77c91;
+}
+
+/* Apply the same appearance in dark mode */
+body.dark .project-grid .grid-art {
+  background: #3b3740;
+  border-color: #655b63;
+}
+
+
+/* =========================================
+   BACK TO TOP BUTTON
+========================================= */
+
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  box-shadow: 0 4px 15px #00000015;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: #f5dce5;
+  color: #77415a;
+  border-color: #c68da2;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #back-to-top {
+    bottom: 18px;
+    right: 18px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  #back-to-top span {
+    display: none;
+  }
+}

@@ -1,30 +1,542 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="Emily Tong - Designer and Engineer. A portfolio of engineering, design, fabrication, and art.">
+  <title>Emily Tong | Design Portfolio</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='76' font-size='82' text-anchor='middle'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Hello, I'm Emily!</h1>
-        <p>Engineering Student | Creative Technologist | Designer</p>
-    </header>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Welcome to my personal portfolio! I'm interested in the intersection of technology, engineering, and creative design.</p>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a href="#home" class="wordmark">Emily Tong</a>
+
+    <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="mode-toggle" class="nav-button" type="button"
+              aria-pressed="false" title="Switch portfolio view">
+        <span aria-hidden="true">▦</span>
+        <span id="mode-label">Simple View</span>
+      </button>
+
+      <button id="lights-toggle" class="nav-button" type="button"
+              aria-pressed="false" title="Toggle fairy lights and dark mode">
+        <span id="light-icon" aria-hidden="true">☾</span>
+        <span id="light-label">Lights On</span>
+      </button>
+
+      <button id="menu-toggle" class="hamburger-button" type="button"
+              aria-controls="primary-nav" aria-expanded="false"
+              aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+      <div class="home-layout">
+
+        <!-- PERSONAL SIDEBAR -->
+        <aside class="profile">
+          <p class="eyebrow">A Little Introduction</p>
+
+          <h1>Hi, I'm <em>Emily!</em></h1>
+          <p class="role">Designer & Engineer</p>
+
+          <p class="bio">
+            I'm an Integrated Design & Media student at
+            New York University Tandon School of Engineering,
+            exploring the intersection of engineering, art,
+            and thoughtful design.
+          </p>
+
+          <div class="profile-rule"></div>
+
+          <div class="profile-fact">
+            <span class="fact-icon" aria-hidden="true">✎</span>
+            <div>
+              <small>CURRENTLY</small>
+              <p>Integrated Design & Media Student</p>
+            </div>
+          </div>
+
+          <div class="profile-fact">
+            <span class="fact-icon" aria-hidden="true">♡</span>
+            <div>
+              <small>MY PHILOSOPHY</small>
+              <p>Where intentional design meets engineering.</p>
+            </div>
+          </div>
+
+          <div class="profile-fact">
+            <span class="fact-icon" aria-hidden="true">✿</span>
+            <div>
+              <small>A FEW THINGS I LOVE</small>
+              <p>Drawing, calligraphy, baking, gaming, and making things.</p>
+            </div>
+          </div>
+
+          <p class="handwritten sidebar-note">
+            Always curious, always creating ♡
+          </p>
+
+          <a href="#about" class="sidebar-link">Get to Know Me ↗</a>
+        </aside>
+
+        <!-- INTERACTIVE CORKBOARD -->
+        <section id="workspace" class="workspace"
+                 aria-label="Interactive portfolio corkboard">
+
+          <div class="workspace-heading">
+            <span>My Little Corner of the Internet ✿</span>
+            <span class="handwritten">Drag, explore, & decorate!</span>
+          </div>
+
+          <div id="corkboard" class="corkboard">
+
+            <div class="fairy-lights" aria-hidden="true">
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+              <span class="light-bulb"></span>
+            </div>
+
+            <!-- PROJECT CARDS GENERATED BY JAVASCRIPT -->
+            <div id="board-projects"></div>
+
+            <!-- EDITABLE QUOTE -->
+            <article class="board-item quote-note" data-id="quote">
+              <span class="pushpin" aria-hidden="true">●</span>
+
+              <label for="quote-text" class="handwritten">
+                Words to Live By...
+              </label>
+
+              <textarea id="quote-text" rows="3" maxlength="250"
+                        aria-label="Editable quote"></textarea>
+
+              <small>Tap to Edit ✎</small>
+            </article>
+
+            <!-- TO-DO LIST WITH WASHI TAPE -->
+            <article class="board-item todo-note" data-id="todo">
+              <span class="tape todo-tape" aria-hidden="true"></span>
+              <span class="todo-pencil" aria-hidden="true">✎</span>
+
+              <h3>Today's To-Do List</h3>
+              <div id="todo-items"></div>
+
+              <button id="add-todo" class="note-action" type="button">
+                + Add Task
+              </button>
+            </article>
+
+            <!-- DECORATIVE BAKING NOTE -->
+            <div class="board-item decoration pastry" data-id="pastry">
+              <span aria-hidden="true">🧁 🍰</span>
+              <small class="handwritten">Something Sweet!</small>
+            </div>
+
+            <!-- CHERRY BLOSSOM DECORATION -->
+            <div class="board-item decoration blossom" data-id="blossom"
+                 aria-label="Cherry blossom decoration">
+              ✿
+            </div>
+
+            <!-- VISITOR-CREATED ELEMENTS -->
+            <div id="custom-notes"></div>
+            <div id="placed-stickers"></div>
+
+            <div id="board-drop-hint" aria-hidden="true">
+              Drop Your Sticker Here ✿
+            </div>
+          </div>
+
+          <!-- CORKBOARD CONTROLS -->
+          <div class="board-toolbar">
+            <button id="sticker-toggle" type="button">
+              ✿ Sticker Bank
+            </button>
+
+            <button id="new-note" type="button">
+              + New Post-it
+            </button>
+
+            <button id="trash-toggle" class="trash-button"
+                    type="button" aria-pressed="false">
+              ♻ Trash
+            </button>
+
+            <button id="reset-board" type="button">
+              ↺ Reset Board
+            </button>
+          </div>
+
+          <!-- STICKER BANK -->
+          <div id="sticker-panel" class="sticker-panel hidden">
+            <div class="panel-heading">
+              <div>
+                <strong class="handwritten">Sticker Bank ✿</strong>
+                <p>Drag a sticker straight onto the corkboard.</p>
+              </div>
+
+              <button id="close-stickers" type="button"
+                      aria-label="Close sticker bank">×</button>
+            </div>
+
+            <div class="sticker-options">
+              <button class="sticker-source" type="button"
+                      data-sticker="🌸" aria-label="Cherry blossom">🌸</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🍰" aria-label="Cake">🍰</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🧁" aria-label="Cupcake">🧁</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🍪" aria-label="Cookie">🍪</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="♡" aria-label="Heart">♡</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🎀" aria-label="Ribbon">🎀</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="⭐" aria-label="Star">⭐</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🚀" aria-label="Rocket">🚀</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="🎨" aria-label="Art palette">🎨</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="✿" aria-label="Flower">✿</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="✦" aria-label="Sparkle">✦</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="✎" aria-label="Pencil">✎</button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="washi-pink"
+                      aria-label="Pink washi tape">
+                <span class="washi-preview washi-pink"></span>
+              </button>
+
+              <button class="sticker-source" type="button"
+                      data-sticker="washi-sage"
+                      aria-label="Sage washi tape">
+                <span class="washi-preview washi-sage"></span>
+              </button>
+            </div>
+
+            <p class="panel-tip">
+              Drag with your mouse, finger, or Apple Pencil.
+              You can also tap a sticker, then tap the board.
+            </p>
+
+            <button id="clear-stickers" type="button"
+                    class="text-button">
+              Remove All Stickers
+            </button>
+          </div>
         </section>
 
-        <section>
-            <h2>My Projects</h2>
-            <p>Projects coming soon!</p>
-        </section>
-    </main>
+        <!-- SIMPLE HOME VIEW -->
+        <section id="simple-home" class="simple-home" hidden>
+          <p class="eyebrow">Selected Work</p>
+          <h2>Things I've <em>Created.</em></h2>
 
-    <script src="script.js"></script>
+          <p class="section-lead">
+            A collection of engineering projects,
+            fabrication, and creative exploration.
+          </p>
+
+          <div id="simple-grid" class="project-grid"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- PROJECTS PAGE -->
+    <section id="projects" class="page content-page">
+      <div class="page-intro">
+        <p class="eyebrow">A Collection of Things I've Made</p>
+        <h2>Selected <em>Work.</em></h2>
+
+        <p class="section-lead">
+          From engineering and prototyping to art,
+          materials, and design experimentation.
+        </p>
+      </div>
+
+      <div class="filters" aria-label="Project categories">
+        <button class="filter active" data-filter="all"
+                type="button">All Work</button>
+
+        <button class="filter" data-filter="engineering"
+                type="button">Engineering</button>
+
+        <button class="filter" data-filter="art"
+                type="button">Art & Creative</button>
+      </div>
+
+      <div id="project-grid" class="project-grid"></div>
+    </section>
+
+    <!-- INDIVIDUAL PROJECT CASE STUDY -->
+    <section id="project-detail" class="page content-page">
+      <a class="back-link" href="#projects">
+        ← Back to Projects
+      </a>
+
+      <div class="detail-intro">
+        <p id="detail-category" class="eyebrow"></p>
+        <h2 id="detail-title"></h2>
+        <p id="detail-summary" class="detail-summary"></p>
+
+        <div class="detail-meta">
+          <div>
+            <small>MY ROLE</small>
+            <p id="detail-role"></p>
+          </div>
+
+          <div>
+            <small>TOOLS & MATERIALS</small>
+            <p id="detail-tools"></p>
+          </div>
+
+          <div id="collaborator-row" hidden>
+            <small>COLLABORATOR</small>
+            <p id="detail-collaborator"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="detail-image" class="detail-image"></div>
+
+      <!-- FULL-WIDTH WRITTEN CASE STUDY -->
+      <div class="case-study">
+
+        <article class="case-section">
+          <div class="case-section-heading">
+            <span>01 /</span>
+            <h3>Overview</h3>
+          </div>
+          <div id="detail-overview" class="case-prose"></div>
+        </article>
+
+        <article class="case-section">
+          <div class="case-section-heading">
+            <span>02 /</span>
+            <h3>Design Process</h3>
+          </div>
+          <div id="detail-process" class="case-prose"></div>
+        </article>
+
+        <article class="case-section">
+          <div class="case-section-heading">
+            <span>03 /</span>
+            <h3>Outcome & Reflection</h3>
+          </div>
+          <div id="detail-outcome" class="case-prose"></div>
+        </article>
+
+      </div>
+
+      <!-- PROCESS PHOTOGRAPHY AND VIDEO -->
+      <section class="media-section">
+        <p class="eyebrow">Behind the Work</p>
+        <h3>Process & <em>Documentation.</em></h3>
+        <div id="project-media" class="media-grid"></div>
+      </section>
+
+      <div class="next-project">
+        <a id="next-project-link" href="#projects">
+          Next Project ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE: HEADSHOT ONLY -->
+    <section id="about" class="page content-page">
+      <div class="about-layout">
+        <div>
+          <p class="eyebrow">A Little More About Me</p>
+
+          <h2>The Person Behind <em>the Projects.</em></h2>
+
+          <p>
+            Hi! I'm Emily Tong, an Integrated Design & Media
+            student at New York University Tandon School of
+            Engineering, with minors in Mechanical Engineering
+            and Mathematics.
+          </p>
+
+          <p>
+            My background in engineering shapes the way I
+            approach problem-solving, while my love for art
+            encourages me to experiment, explore, and create.
+          </p>
+
+          <p>
+            I'm particularly interested in industrial design,
+            physical fabrication, and transforming ideas
+            into thoughtful, tangible experiences.
+          </p>
+
+          <p>
+            Outside of design, I enjoy drawing, calligraphy,
+            baking, playing video games, and making handmade
+            gifts for people I care about.
+          </p>
+
+          <a class="primary-button" href="#contact">
+            Let's Connect ↗
+          </a>
+        </div>
+
+        <figure class="about-headshot">
+          <img src="img/emily-headshot.jpg"
+               alt="Portrait of Emily Tong"
+               loading="lazy">
+
+          <figcaption class="handwritten">
+            Nice to Meet You! ♡
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="page content-page contact-page">
+      <p class="eyebrow">Have Something in Mind?</p>
+
+      <h2>Let's Create <em>Something Together.</em></h2>
+
+      <p class="section-lead">
+        I'm always happy to connect about design,
+        engineering, collaboration, and creative ideas.
+      </p>
+
+      <div class="contact-links">
+
+        <div class="contact-row">
+          <div class="contact-info">
+            <small>DESIGN / PERSONAL EMAIL</small>
+            <a href="mailto:emilytong.design@gmail.com">
+              emilytong.design@gmail.com
+            </a>
+          </div>
+
+          <button class="copy-button" type="button"
+                  data-copy="emilytong.design@gmail.com"
+                  aria-label="Copy personal email"
+                  title="Copy email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="8" width="12" height="12" rx="2"/>
+              <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-info">
+            <small>NYU EMAIL</small>
+            <a href="mailto:et2709@nyu.edu">
+              et2709@nyu.edu
+            </a>
+          </div>
+
+          <button class="copy-button" type="button"
+                  data-copy="et2709@nyu.edu"
+                  aria-label="Copy NYU email"
+                  title="Copy email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="8" width="12" height="12" rx="2"/>
+              <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-info">
+            <small>LET'S CONNECT</small>
+            <a href="https://www.linkedin.com/in/emily-tong-e1806t/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn Profile ↗
+            </a>
+          </div>
+
+          <button class="copy-button" type="button"
+                  data-copy="https://www.linkedin.com/in/emily-tong-e1806t/"
+                  aria-label="Copy LinkedIn URL"
+                  title="Copy LinkedIn URL">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="8" width="12" height="12" rx="2"/>
+              <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <p id="copy-status" class="copy-status"
+         role="status" aria-live="polite"></p>
+
+      <div class="contact-flower" aria-hidden="true">✿</div>
+    </section>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" type="button" aria-label="Back to top">
+    ↑
+    <span>Back to Top</span>
+    </button>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>© <span id="footer-year">2026</span> Emily Tong</span>
+
+    <span class="footer-message">
+      Thank you for stopping by! ✿
+    </span>
+  </footer>
+
+  <!-- DRAG PREVIEW FOR STICKERS AND WASHI TAPE -->
+  <div id="sticker-ghost" aria-hidden="true"></div>
+
 </body>
 </html>
