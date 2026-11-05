@@ -44,7 +44,7 @@ While CAD taught me to think about precision and functionality, Maya introduced 
     media: [
       {
         type: "image",
-        src: "img/3d-modeling-midterm/3d-modeling-reference.jpg",
+        src: "img/3d-modeling-midterm/3d-modeling-reference.JPG",
         caption:
           "Original Genshin Impact bow reference used for modeling inspiration. Reference artwork is not my own."
       },
@@ -201,7 +201,7 @@ It made me more confident in approaching unfamiliar engineering challenges and r
       },
       {
         type: "image",
-        src: "img/baby-rocket/baby-rocket-sanding.jpg",
+        src: "img/baby-rocket/baby-rocket-sanding.JPG",
         caption:
           "Preparing and finishing the rocket before launch."
       },
@@ -213,9 +213,9 @@ It made me more confident in approaching unfamiliar engineering challenges and r
       },
       {
         type: "image",
-        src: "img/baby-rocket/baby-rocket-portrait.jpg",
+        src: "img/baby-rocket/baby-rocket-portrait.JPG",
         caption:
-          "Photograph taken during the model rocket launch activity."
+          "Photograph taken during the launch."
       },
       {
         type: "image",
@@ -241,7 +241,7 @@ It made me more confident in approaching unfamiliar engineering challenges and r
       "Designing a modular two-part mounting system for a supercapacitor on ARC Robotics' Hero Robot, prioritizing protection, accessibility, and wire management.",
 
     role: "Electronics Mounting & Mechanical Design",
-    tools: "CAD Modeling, 3D Printing, Threaded Inserts",
+    tools: "CAD Modeling (Onshape), 3D Printing, Threaded Inserts",
 
     overview: `During the 2025-2026 competition season, I contributed to the design of mounting components for various electronics on ARC Robotics' Hero Robot chassis.
 
