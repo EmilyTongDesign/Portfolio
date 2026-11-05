@@ -20,26 +20,37 @@ const PROJECTS = [
     rotation: -4,
 
     summary:
-      "Recreating an intricate fantasy bow from Genshin Impact in Autodesk Maya as my first exploration of polygon modeling.",
+      "Recreating a bow from the game Genshin Impact in Autodesk Maya as my first exploration of polygon modeling.",
 
     role: "3D Modeling & Design",
     tools: "Autodesk Maya",
 
-    overview: `For my 3D Modeling midterm, we were given the freedom to create any object of our choice using Autodesk Maya. I decided to recreate a bow from Genshin Impact, a game I've always enjoyed playing. One of the things I've admired most about the game is the amount of detail that goes into its designs, and I wanted to challenge myself to recreate some of that complexity in three dimensions.
+    overview: `For my 3D Modeling midterm, we had the freedom to create any object of our 
+    choice using Autodesk Maya. I decided to recreate a bow from Genshin Impact, 
+    a game I've always enjoyed playing. One of the things I've always admired 
+    about the game is how much thought goes into its designs, from the intricate 
+    details to the way each object has its own personality. I wanted to challenge 
+    myself to recreate that same level of detail in my own work.
+    
+    Coming from an engineering background, I was more familiar with CAD software, where precision and functionality are often the main priorities. This project gave me an opportunity to explore a different side of 3D modeling, one that focused more on artistic expression and the creative possibilities of digital forms.`,
 
-This was my first experience with 3D modeling outside of traditional CAD software, so I was also curious to see how creative polygon modeling compared to the engineering-focused tools I was more familiar with.`,
+    process: `I started by studying a reference image of the bow and breaking its design into smaller, 
+    more manageable pieces. What initially looked like an overwhelming amount of detail became much easier 
+    to approach once I started identifying the individual shapes and understanding how they fit together.
 
-    process: `I began by studying a reference image of the bow and breaking its intricate design into smaller, more manageable components. Its overlapping shapes, decorative details, and curved forms were especially challenging because I had only recently started learning Maya.
+    Since I was still relatively new to Maya, I had to experiment with different tools and techniques to recreate the bow's curved forms, 
+    overlapping elements, and decorative details. Unlike traditional CAD modeling, 
+    where I was used to working with exact dimensions and geometric constraints, 
+    Maya encouraged me to think more visually and focus on how the different forms came together.
 
-Unlike CAD modeling, where I was accustomed to working with precise dimensions and structured geometric relationships, Maya required me to approach form through polygon manipulation and visual refinement.
+    There was a lot of trial and error throughout the process, but I found myself applying the 
+    same problem-solving mindset I had developed through engineering. By breaking down a complicated design
+    into smaller challenges, I was able to gradually bring everything together while becoming 
+    more comfortable with a new creative tool.`,
 
-I experimented with different modeling tools, repeatedly adjusted the geometry, and gradually assembled the individual components into a complete model. The process pushed me to become more comfortable learning through experimentation and trial and error.`,
+    outcome: `By the end of the project, I had created a digital model of the bow and put together a showcase video to highlight the final design.
 
-    outcome: `By the end of the project, I had created a digital model inspired by the original bow and documented the final result in a showcase video.
-
-This project was particularly meaningful because it allowed me to combine a personal interest with a new technical skill. It helped me recognize how different modeling tools encourage different approaches to design.
-
-While CAD taught me to think about precision and functionality, Maya introduced me to a more expressive way of creating complex forms. The experience gave me more confidence in learning unfamiliar software and approaching designs that initially seemed too complicated to tackle.`,
+    What made this project meaningful to me was that it allowed me to bring together two sides of design that I had previously approached separately. My experience with CAD taught me to think about structure, precision, and how individual components come together, while Maya introduced me to a more expressive way of exploring shapes and details.`,
 
     media: [
       {
@@ -72,29 +83,27 @@ While CAD taught me to think about precision and functionality, Maya introduced 
     summary:
       "Combining artistic expression with engineering and fabrication through the painting of Perseverance, New York University's first full-scale hybrid-fueled rocket.",
 
-    role: "Rocket Painting, Visual Design & Airframe Fabrication",
+    role: "Rocket Painting, Visual Design, & Airframe Fabrication",
     tools:
-      "Composite Airframe Layup, Cricut, Precision Knife, Vinyl Stencils, Painting",
+      "Composite Airframe Layup, Cricut, Precision Knife, Vinyl Stencils, Spray Painting",
 
-    overview: `As part of Rogue Aerospace, I took the initiative to help bring visual identity back into our rockets after noticing that the team hadn't painted a rocket in quite some time.
+overview: `As part of Rogue Aerospace, NYU's collegiate rocketry team, I wanted to bring a sense of visual identity back to our rockets after noticing that the team hadn't painted one in quite some time.
 
-The project centered around Perseverance, the team's first full-scale hybrid-fueled rocket, standing over 15 feet tall. Alongside developing and applying its painted design, I also contributed to the manufacturing of the rocket's airframe.
+The opportunity came with Perseverance, the team's first full-scale hybrid-fueled rocket, standing over 15 feet tall. I took on the challenge of designing and painting its exterior while also contributing to the manufacturing of its airframe.
 
-This provided an opportunity to combine two aspects of engineering and art that I had always wanted to explore.`,
+What excited me most about this project was the opportunity to combine both the technical and artistics sides to create something that reflected the team's identity and the significance of this milestone.`,
 
-    process: `I developed the design around the rocket's name, Perseverance, using large, bold lettering as its centerpiece. The cherry blossoms were inspired by the trees that bloom around New York University Tandon School of Engineering during the spring. To me, they represented growth and new beginnings, fitting for the team's first full-scale hybrid rocket.
+process: `I started by thinking about how the rocket's design could tell a story about the team and what Perseverance represented. I made its name the centerpiece using large, bold lettering, while incorporating cherry blossoms inspired by the trees that bloom around NYU Tandon during the spring. To me, they symbolized growth and new beginnings, which felt especially fitting for the team's first full-scale hybrid rocket.
 
-Near the fins, I incorporated a design inspired by the Brooklyn Bridge to represent our connection to Brooklyn.
+Near the fins, I also included a design inspired by the Brooklyn Bridge as a way to represent the team's connection to Brooklyn.
 
-I participated in the composite airframe layup process, which helped me understand how the rocket's physical construction influenced its finishing requirements. Because the rocket stood over 15 feet tall, painting required careful planning. I had to consider how to apply multiple layers while creating a durable finish appropriate for the rocket's intended launch conditions.
+Alongside developing the visual design, I participated in the composite airframe layup process, which gave me a better understanding of how the rocket was constructed and how that would affect the painting process. With a rocket standing over 15 feet tall, I had to think carefully about the materials, application methods, and durability of the finish.
 
-I prepared vinyl stencils using a precision knife and a Cricut machine. Cutting detailed designs by hand took considerable time, while wrapping and aligning larger stencils around the curved airframe required patience and careful adjustments.`,
+I created vinyl stencils using a combination of hand-cutting with a precision knife and a Cricut machine. Some of the more intricate details required careful cutting, and applying larger stencils around the curved airframe came with its own challenges. There was a lot of adjusting and problem-solving along the way, especially when trying to make sure the design looked consistent across the different sections of the rocket.`,
 
-    outcome: `Seeing the finished painted components and assembled rocket was especially rewarding because I had contributed to both the manufacturing process and its visual identity.
+outcome: `Seeing the finished painted components come together as part of the assembled rocket was one of the most rewarding parts of this experience.
 
-The experience reinforced something that has become increasingly important to me: engineering and creativity do not have to exist separately. Even the artistic part of the project required technical problem-solving, planning, precision, and an understanding of materials.
-
-It strengthened my interest in projects that combine engineering knowledge with artistic expression.`,
+What I appreciated most was being able to give an engineering project a more personal and creative identity. The rocket was already an impressive technical achievement, but I wanted its appearance to tell a story about the people, place, and effort behind it.`,
 
     media: [
       {
@@ -102,7 +111,7 @@ It strengthened my interest in projects that combine engineering knowledge with 
         src:
           "img/perseverance-rocket-painting/perseverance-design-sketch.png",
         caption:
-          "Initial rocket painting design with Perseverance lettering, cherry blossoms, and Brooklyn-inspired graphics."
+          "Initial rocket painting design of Perseverance."
       },
       {
         type: "image",
@@ -163,35 +172,35 @@ It strengthened my interest in projects that combine engineering knowledge with 
     summary:
       "Independently designing, simulating, fabricating, and successfully launching a model rocket to over 1,000 feet.",
 
-    role: "Independent Design, Simulation & Fabrication",
+    role: "CAD Design, Simulation, & Fabrication",
     tools: "SolidWorks, OpenRocket, 3D Printing",
 
-    overview: `When I first joined Rogue Aerospace, I had very little experience with rockets or the engineering principles behind them. Although I was excited to contribute to the team, I wanted to better understand how the different components of a rocket work together.
 
-To challenge myself, I decided to design and launch my own small-scale model rocket. My goal was to go through the entire process, from CAD modeling and simulation to fabrication, launch, and recovery.`,
+overview: `When I first joined Rogue Aerospace, NYU's collegiate rocketry team, I had very little experience with rockets or the engineering principles behind them. While I was excited to contribute to the team, I also wanted to understand how the different components of a rocket worked together beyond what I was learning from my subteam. To challenge myself, I decided to design and launch my own small-scale model rocket.
 
-    process: `I began by creating a model of the rocket in SolidWorks, considering how the different components would fit together inside a relatively small body.
+My goal was to take the project through every stage, from modeling and simulation to fabrication, launch, and recovery.`,
 
-I then used OpenRocket to run multiple simulations and evaluate the expected flight behavior before moving forward with fabrication.
 
-One of my biggest concerns was the recovery system. Because the rocket was relatively small, I had to think carefully about how to fit the parachute inside while making sure it could deploy properly during flight. This encouraged me to consider not only how the rocket would look and fit together, but also how its components would function throughout the launch and recovery sequence.
+process: `I started by modeling the rocket in SolidWorks, thinking carefully about how the different components would fit together within its relatively small body. I then used OpenRocket to simulate its flight behavior and make adjustments to the design before moving on to fabrication.
 
-After refining the design, I fabricated the rocket using 3D printing and prepared it for launch.`,
+One of the biggest challenges was making sure that what I designed digitally could be accurately translated into a physical rocket. Since the simulations relied on specific dimensions and measurements, I had to be mindful of how even small differences between the digital model and the actual rocket could affect its flight performance. This meant carefully translating measurements from OpenRocket into SolidWorks and considering how those dimensions would carry over into the fabrication process.
 
-    outcome: `My rocket successfully launched to an altitude of over 1,000 feet and was recovered afterward.
+Another challenge was figuring out the recovery system. Because the rocket was relatively small, there wasn't much room to work with, and I had to find a way to fit the parachute inside while still making sure it could deploy properly during flight.
 
-I was particularly proud to be the only member of my group to achieve a successful baby rocket launch during that activity, especially because this was my first time going through the process.
+After refining the design through multiple simulations and adjustments, I fabricated the rocket using 3D printing and prepared it for its first launch.`,
 
-More importantly, the project gave me a much stronger understanding of the systems involved in rocketry. Instead of learning about individual components only in theory, I could see how modeling, simulation, fabrication, and physical performance connected to one another.
+outcome: `After going through the entire design and fabrication process, my rocket successfully launched to an altitude of over 1,000 feet and was recovered afterward.
 
-It made me more confident in approaching unfamiliar engineering challenges and reminded me how much I enjoy learning through hands-on experimentation.`,
+I was especially proud to be the only member of the team to achieve a successful launch during our baby rocket activity. Having started the project with very little knowledge of rocketry, seeing something I designed and built actually take flight was an incredibly rewarding experience.
+
+Beyond the successful launch, this project helped me understand how much thought goes into making a design work in the real world. I learned that even when something looks good in a CAD model or performs well in a simulation, there are still physical constraints and unexpected challenges to consider.`,
 
     media: [
       {
         type: "image",
         src: "img/baby-rocket/baby-rocket-solidworks.png",
         caption:
-          "SolidWorks CAD model of my independently designed rocket."
+          "SolidWorks CAD model of the designed rocket."
       },
       {
         type: "image",
@@ -238,32 +247,28 @@ It made me more confident in approaching unfamiliar engineering challenges and r
     rotation: 3,
 
     summary:
-      "Designing a modular two-part mounting system for a supercapacitor on ARC Robotics' Hero Robot, prioritizing protection, accessibility, and wire management.",
+      "Designing a modular two-part mounting system for a supercapacitor on ARC Robotics' Hero Robot.",
 
     role: "Electronics Mounting & Mechanical Design",
     tools: "CAD Modeling (Onshape), 3D Printing, Threaded Inserts",
 
-    overview: `During the 2025-2026 competition season, I contributed to the design of mounting components for various electronics on ARC Robotics' Hero Robot chassis.
 
-One of the most challenging components I worked on was the supercapacitor. Because of its size and the amount of wiring connected to it, designing an effective mount required more than simply finding a way to secure it to the robot.
+overview: `During the 2025-2026 competition season, I worked in NYU's ARC Robotics: Team Ultraviolet to design mounting components for various electronics on our Hero Robot chassis.
 
-I wanted to create a solution that would protect the electronics while also making them easier to install, remove, and maintain.`,
+One of the more challenging components I worked on was the supercapacitor. Because of its size and the amount of wiring connected to it, I wanted to create a mount that would not only protect the electronics during competition, but also make it easier for my teammates to install, remove, and maintain them without having to take apart the entire assembly.`,
 
-    process: `The biggest challenge was balancing protection, accessibility, and wire management within the limited space of the chassis.
+process: `One of the biggest challenges was finding a balance between protection, accessibility, and wire management within the limited space of the chassis. While it would have been easier to design a single-piece mount that simply held everything in place, I started thinking about how inconvenient that would be whenever someone needed to access the electronics.
 
-Rather than designing a single-piece mount that would require the entire assembly to be unscrewed whenever the electronics needed attention, I developed a modular two-part system. The outer mount could remain secured to the robot, while the inner component holder could slide in and out without requiring the outer structure to be removed.
+With that in mind, I developed a modular two-part system. The outer mount would remain secured to the chassis, while the inner component holder could slide in and out without having to unscrew the entire assembly. This allowed the supercapacitor to remain protected while making it much easier to access the electronics and manage the wiring.
 
-This approach made it easier to access the supercapacitor and organize the wiring while preserving a protective enclosure.
+I also incorporated threaded inserts to create secure fastening points that could withstand repeated assembly and disassembly. Since the robot would be competing in an environment where impacts and flying projectiles were possible, I designed thicker outer walls to provide an additional layer of protection.
 
-I incorporated threaded inserts to create secure, reusable fastening points. I also designed thicker outer walls to help protect the electronics against impacts and potential flying projectiles during competition.
+Throughout the process, I created prototype prints and made adjustments to the design based on how the components fit together and interacted with the surrounding chassis.`,
 
-Throughout the process, I created prototype prints, adjusted the mounting components, and considered how the assembly would integrate into the surrounding chassis.`,
 
-    outcome: `The final design consisted of a modular two-part mounting system that allowed the electronics to be held in a removable inner component within a protective outer mount.
+outcome: `The final design was a mounting system that securely housed the supercapacitor within a protective enclosure while still allowing for easy access when needed.
 
-This project taught me to think beyond whether a component simply fits or functions. I had to consider how teammates would interact with the design, how easily the electronics could be serviced, and how the assembly would hold up in a competition environment.
-
-It reinforced the importance of designing for the people who will assemble, maintain, and use a product. That balance between functionality, manufacturability, and usability is one of the aspects of industrial and product design that interests me most.`,
+What stood out to me most about this project was realizing how important it is to approach design from multiple perspectives. From an engineering standpoint, the mount needed to securely hold and protect the electronics, but from the perspective of my teammates, it also needed to be easy to work assemble and maintain. Having to come up with more creative solutions to address both perspectives is what I enjoyed working on.`,
 
     media: [
       {
@@ -327,38 +332,31 @@ It reinforced the importance of designing for the people who will assemble, main
     summary:
       "A collaborative mixed-media installation exploring individuality, conformity, and self-expression through soft fabric and rigid acrylic.",
 
-    role: "Collaborative Concept, Design & Fabrication",
+    role: "Collaborative Concept, Design, & Fabrication",
     collaborator: "Celine Ho",
     tools:
       "Adobe Illustrator, Laser Cutting, Acrylic, Organza, Sewing, Aluminum Wire, Vinyl",
 
-    overview: `Taking Up Space is a mixed-media installation I created with Celine Ho for our fabrication course. The piece explores the journey of finding individuality in a world that often pressures us to conform.
 
-The rigid acrylic box represents societal expectations and the pressure to fit into a predetermined mold. Fabric rises from the floor and enters the box, symbolizing the uncertain path of self-discovery.
+overview: `Taking Up Space is a mixed-media installation I created with Celine Ho for our fabrication course midterm. The piece explores the journey of finding our individuality in a world where we often feel pressured to fit into certain expectations.
 
-As it moves through the structure, the fabric adjusts to its boundaries before eventually extending outward, representing the courage to express individuality on our own terms.
+At the center of the installation is a rigid acrylic box, representing the boundaries and expectations society places on us. Fabric rises from the floor and gradually makes its way into the box, symbolizing the uncertainty that comes with discovering who we are. As it moves through the structure, the fabric begins to conform to its boundaries before eventually breaking outward with vibrant colors, representing the freedom to express our individuality.
 
-We wanted to use the contrast between soft, flowing materials and precise geometric structures to communicate the tension between conformity and self-expression.`,
+We wanted to explore how contrasting materials could tell this story without relying on words. By combining the rigid, geometric structure of acrylic with the soft, flowing nature of fabric, we hoped to communicate the tension between fitting in and finding the confidence to be ourselves.`,
 
-    process: `One of our biggest goals was to combine different fabrication techniques into a cohesive installation.
+process: `One of our biggest challenges was figuring out how to bring together materials with very different properties while making sure each one contributed to the overall story we wanted to tell.
 
-We began by creating the acrylic cube using Adobe Illustrator and laser cutting the individual pieces before assembling them with acrylic cement. We then applied holographic vinyl to selected surfaces, working through challenges including adhesive marks, air bubbles, folds, and alignment.
+We started by designing the acrylic box in Adobe Illustrator, laser cutting the individual panels, and assembling them using acrylic cement. We also applied holographic vinyl to selected surfaces.
 
-The fabric components were another important part of the process. This was my first time using a sewing machine, so I had to learn how to work with different materials while considering their structural requirements.
+The fabric was an interesting challenge because we wanted it to appear soft and free-flowing while still holding specific shapes. This was my first time using a sewing machine, so I had to learn how different fabrics behaved and how to adjust my techniques accordingly. For the organza, we stitched wide channels that allowed aluminum wire to pass through, giving us the flexibility to shape the fabric into curved, organic forms. The stretchier black fabric presented a different challenge, requiring us to adjust the sewing machine's tension to achieve consistent stitching.
 
-For the organza pieces, we created wide stitched channels that allowed aluminum wire to pass through the fabric. This gave the soft material enough structure to hold curved, organic forms. The black fabric required adjustments to the sewing machine's tension because of its stretchier properties.
+Installing the piece also required more technical problem-solving than I initially expected. We used fishing wire to suspend the acrylic box and individual fabric components, but distributing the weight evenly became difficult as the heavier fabrics caused the structure to tilt. We experimented with different suspension points and adjusted the wire-supported fabric until we achieved the composition we envisioned.
 
-During installation, we used fishing wire to suspend the acrylic cube and the individual fabric components. Balancing the structure was particularly challenging because the heavier fabric could cause the cube to tilt. We adjusted the suspension points and wire-supported fabric to achieve our intended composition.`,
+Throughout the process, we had to find a balance between the artistic vision and the physical limitations of our materials. Every adjustment involved thinking about both how the installation would look and how we could actually make it work.`,
 
-    outcome: `The completed installation brought together rigid acrylic geometry, flowing fabric, and vibrant color to communicate a journey from conformity toward individuality.
+outcome: `The final installation brought together rigid acrylic, flowing fabric, and vibrant colors to tell a story about the journey from conformity to individuality.
 
-This project was particularly meaningful because it challenged me to learn unfamiliar fabrication techniques while also considering how materials can communicate an idea.
-
-Sewing became much more technical than I initially expected. I had to consider stitch width, fabric tension, weight distribution, structural support, and shaping.
-
-At the same time, every technical decision contributed to the visual and conceptual message of the piece. Working on a large installation also taught me about planning, collaboration, and adapting when materials behave differently than expected.
-
-It reinforced that fabrication is not simply about creating an object. It can also be a way to tell stories and create meaningful experiences.`,
+What made this project meaningful to me was that I was able to gain a much greater appreciation for the technical side of artistic fabrication. Before this project, I hadn't realized how much problem-solving could go into something like sewing or arranging fabric. From adjusting stitch tension to balancing the weight of suspended materials, I found myself applying the same analytical thinking I use in engineering to solve creative challenges.`,
 
     media: [
       {
@@ -373,7 +371,7 @@ It reinforced that fabrication is not simply about creating an object. It can al
         src:
           "img/taking-up-space-installation/installation-acrylic-vinyl.jpg",
         caption:
-          "Acrylic cube after applying holographic vinyl."
+          "Acrylic box after applying holographic vinyl."
       },
       {
         type: "image",
@@ -415,7 +413,7 @@ It reinforced that fabrication is not simply about creating an object. It can al
         src:
           "img/taking-up-space-installation/installation-cropped-view.jpg",
         caption:
-          "Final composition combining acrylic, fabric, wire, and color."
+          "Final composition of the installation."
       }
     ]
   }
